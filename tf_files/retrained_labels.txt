@@ -1,0 +1,8 @@
+usd20
+myr100
+ind20000
+ind100000
+sgd10
+usd10
+sgd50
+myr20

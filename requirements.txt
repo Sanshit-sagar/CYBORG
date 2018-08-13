@@ -1,0 +1,7 @@
+tensorflow 
+scipy
+numpy
+pyimgur
+forex_python
+flask
+imutils
