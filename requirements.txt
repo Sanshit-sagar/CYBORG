@@ -1,10 +1,11 @@
-imutils==0.4.6
 numpy==1.11.3
-forex_python==1.1
-scipy==1.1.0
-opencv_python==3.4.1.15
-Flask==1.0.2
-tensorflow==1.8.0
 pyimgur==0.6.0
+scipy==1.1.0
+tensorflow==1.8.0
+forex_python==1.1
+imutils==0.4.6
+Flask==1.0.2
+opencv_python==3.4.1.15
 Flask_RESTful==0.3.6
 Pillow==5.2.0
+gunicorn 
