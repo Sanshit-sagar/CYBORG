@@ -267,5 +267,6 @@ def run_main(img_loc, num_img, currency_req):
 	return jsonify(to_ret)
 
 if __name__ == '__main__':
-        #app.run(host='170.252.161.137', port=5000, debug=False)
-	app.run(host='0.0.0.0', port=5000, debug=False)
+	app.run(host='0.0.0.0', port=5433) 
+       #app.run(host='170.252.161.137', port=5000, debug=False)
+#	app.run(host='0.0.0.0', port=5000, debug=False)
