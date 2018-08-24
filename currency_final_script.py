@@ -243,19 +243,24 @@ def run_main(img_loc, num_img, currency_req):
 	print('\n' + "Number of objects identified:" + str(curr_index-1) + " in " + str(time_taken) + " seconds.")
 
 	to_ret_str = ''
+	to_ret_usd = str(0) 
+	to_ret_sgd = str(0)
+	to_ret_ind = str(0)
+	to_ret_myr = str(0)
+
 	if(currency_arr["USDs"]!=0):
-		to_ret_str += (" The number of USD identified = " + str(currency_arr["USDs"]) + '\n')
+		to_ret_usd = (str(currency_arr["USDs"]))
 	if(currency_arr["SGDs"]!=0):
-		to_ret_str += (" The number of SGD identified = " + str(currency_arr["SGDs"]) + '\n')
+		to_ret_sgd = (str(currency_arr["SGDs"]))
 	if(currency_arr["INDs"]!=0):
-		to_ret_str += (" The number of IND identified = " + str(currency_arr["INDs"]) + '\n')
+		to_ret_ind = (str(currency_arr["INDs"]))
 	if(currency_arr["MYRs"]!=0):
-		to_ret_str += (" The number of MYR identified = " + str(currency_arr["MYRs"]) + '\n')
+		to_ret_myr = (str(currency_arr["MYRs"]))
 
-	to_ret_str += ('\n' + "The total value in " + currency_to_convert_to_input + " is:" + str(total_value))
-
+	to_ret_str += (currency_to_convert_to_input + " : " + str(total_value))
+	#print(to_ret_usd + " " + to_ret_sgd + " " + to_ret_ind + " " + to_ret_myr)
 	print("The returned string is: " + to_ret_str)
-	to_ret = {"result_image_link": to_ret_link, "result_str":to_ret_str}
+	to_ret = {"result_image_link": to_ret_link, "result_str":to_ret_str, "usd":to_ret_usd, "sgd":to_ret_sgd, "ind":to_ret_ind, "myr":to_ret_myr}
 
 	currency_arr["USDs"]=0
 	currency_arr["SGDs"]=0
@@ -267,6 +272,6 @@ def run_main(img_loc, num_img, currency_req):
 	return jsonify(to_ret)
 
 if __name__ == '__main__':
-	app.run(host='0.0.0.0', port=5433) 
+#	app.run(host='0.0.0.0', port=5433) 
        #app.run(host='170.252.161.137', port=5000, debug=False)
-#	app.run(host='0.0.0.0', port=5000, debug=False)
+	app.run(host='0.0.0.0', port=5000, debug=False)
