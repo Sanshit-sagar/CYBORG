@@ -44,14 +44,14 @@ def home_page():
 			filestr = (request.files['file'].read())
 			img = Image.open(BytesIO(filestr))
 			print("Image recieved from front end!")
-			img.save("/Users/sanshitsagar/Downloads/models/tutorials/image/imagenet/tensorflow-image-classifier/currency_img.jpg")
+			img.save("/currency_img.jpg")
 			immutable_dict_obj = request.form.to_dict()
 			incoming_string = (immutable_dict_obj['MultipartEntity'])
 			num_notes = int(incoming_string[0])
 			currency_req = str(incoming_string[2:])
 			print("The number of notes needed is:" + str(num_notes) + "The currency to convert to is:" + currency_req + "------")
 			print("Image saved and being sent to backend")
-			results = run_main("/Users/sanshitsagar/Downloads/models/tutorials/image/imagenet/tensorflow-image-classifier/currency_img.jpg", num_notes, currency_req)
+			results = run_main("/currency_img.jpg", num_notes, currency_req)
 			print("Have the results! Returning to front end")
 			return results
 		except Exception as e:
